@@ -210,10 +210,6 @@ public class RootBorderPane extends BorderPane
 
     private void handelSave()
     {
-//        FileChooser fileChooser = new FileChooser();
-//        fileChooser.setTitle("Save");
-//        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Files", "*.*"));
-//        File file = fileChooser.showOpenDialog(null);
 
         try
         {
@@ -222,15 +218,12 @@ public class RootBorderPane extends BorderPane
             fileChooser.setTitle("Choose Local file");
             fileChooser.setInitialDirectory(new File("C:\\Users\\Elaheh\\OneDrive - HTL Spengergasse\\Desktop\\College\\Java_InteliJ\\Local-GUI"));
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Files", "*.*"));
-            File file = fileChooser.showOpenDialog(null);
+            File file = fileChooser.showSaveDialog(null);
             if (file != null)
 
 
             {
-                local.save(file.getName());
-//                System.out.println(local);
-                productView.getSelectionModel();
-                mEdit.setDisable(false);
+                local.save(file.getAbsolutePath());
             }
         }
         catch (LocalException e) {

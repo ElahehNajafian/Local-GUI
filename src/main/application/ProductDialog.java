@@ -23,7 +23,7 @@ public class ProductDialog extends Dialog<ButtonType>
     private final Label lCount = new Label("Count");
     private final Spinner<Integer> spCount = new Spinner<>(10, 500, 20);
     private final Label lMl = new Label("ml");
-    private final Slider slMl = new Slider(50, 1000, 500);
+    private final Slider slMl = new Slider(100, 1000, 300);
     private final Label lWithAlcohol = new Label("Alcohol");
     private final HBox boxAlcohol = new HBox();
     private final ToggleGroup tgAlcohol = new ToggleGroup();
@@ -52,6 +52,10 @@ public class ProductDialog extends Dialog<ButtonType>
 
         slMl.setMajorTickUnit(50);
         slMl.setShowTickLabels(true);
+        slMl.setMinorTickCount(10);
+        slMl.setShowTickMarks(true);
+        slMl.setBlockIncrement(5);
+        slMl.setSnapToTicks(true);
         
         rbWithAlcohol.setToggleGroup(tgAlcohol);
         rbWithOutAlcohol.setToggleGroup(tgAlcohol);
@@ -127,12 +131,12 @@ public class ProductDialog extends Dialog<ButtonType>
         this.product = new Product();
         setTitle("New Product");
 
-        tfID.setText("100");
+        tfID.setText("");
         tfID.setPromptText("ID");
         tfName.setText("");
-//        tfName.setPromptText("Name");
-        tfPrice.setText("2.0");
-        tfPrice.setPromptText("Price");
+        tfName.setPromptText("Name");
+        tfPrice.setText("100");
+        //tfPrice.setPromptText("Price");
         spCount.getValueFactory().setValue(500);
         slMl.setShowTickLabels(true);
         rbWithAlcohol.setSelected(true);
