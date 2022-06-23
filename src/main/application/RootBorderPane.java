@@ -159,6 +159,7 @@ public class RootBorderPane extends BorderPane
             ButtonType buttonType = buttonTypeOpt.get();
             if (buttonType == ButtonType.OK) {
                 productView.refresh();
+//                productView.getSelectionModel().clearSelection();
             }
         }
         else

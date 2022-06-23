@@ -97,7 +97,7 @@ public class ProductDialog extends Dialog<ButtonType>
             product.setDrinkName(tfName.getText());
             product.setWithAlcohol(rbWithAlcohol.isSelected());
             product.setMl(slMl.getMinorTickCount());
-            product.setprice(Double.parseDouble(String.valueOf(tfPrice)));
+            product.setprice(Double.parseDouble(tfPrice.getText()));
             product.setCount(product.getCount());
 
         }
@@ -122,9 +122,12 @@ public class ProductDialog extends Dialog<ButtonType>
         rbWithAlcohol.setSelected(product.isWithAlcohol());
         rbWithOutAlcohol.setSelected(!product.isWithAlcohol());
 
+//        Optional<ButtonType> buttonType = showAndWait();
+//        return buttonType;
         return showAndWait();
 
     }
+
 
     public Optional<ButtonType> showNewDialog()
     {
@@ -139,6 +142,7 @@ public class ProductDialog extends Dialog<ButtonType>
         //tfPrice.setPromptText("Price");
         spCount.getValueFactory().setValue(500);
         slMl.setShowTickLabels(true);
+//        slMl.getMinorTickCount();
         rbWithAlcohol.setSelected(true);
         rbWithOutAlcohol.setSelected(false);
 
